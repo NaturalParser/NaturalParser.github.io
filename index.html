@@ -49,6 +49,9 @@
 body {
   background-color: var(--bs-gray-200);
 }
+.cursor-pointer{
+  cursor: pointer;
+}
 </style>
 <!-- --- -->
 </head>
@@ -61,7 +64,7 @@ body {
 <div class="page-cover" v-if="false">
   <div class="main-hero-wrap container py-2">
     <div class="main-hero rounded d-flex align-items-center justify-content-center">
-      <div class="d-flex flex-column align-items-center justify-content-center">
+      <div class="d-flex flex-column align-items-center justify-content-center cursor-pointer">
         <img src="/favicon.svg" alt="NaturalParser-icon" class="main-app-icon w-100">
         <h1 class="fw-bold m-0">NaturalParser</h1>
         <p class="fw-light text-secondary">Parse Natural Language in a Natural way.</p>
@@ -80,7 +83,7 @@ body {
 
   <div class="main-hero-wrap container py-2">
     <div class="main-hero rounded d-flex align-items-center justify-content-center">
-      <div class="d-flex flex-column align-items-center justify-content-center">
+      <div class="d-flex flex-column align-items-center justify-content-center cursor-pointer" @click="gogo()">
         <img src="/favicon.svg" alt="NaturalParser-icon" class="main-app-icon w-100">
         <h1 class="fw-bold m-0">NaturalParser</h1>
         <p class="fw-light text-secondary">Parse Natural Language in a Natural way.</p>
@@ -107,8 +110,16 @@ const MainApp = {
     const data = Vue.reactive({
       hello: "",
     });
+    const gogo = () => {
+      // // 在新标签页打开 https://naturalparser.github.io/site/
+      // const url = "https://naturalparser.github.io/site/";
+      // window.open(url);
+      // 跳转到 https://naturalparser.github.io/site/
+      window.location.href = "https://naturalparser.github.io/site/";
+    };
     return {
       data,
+      gogo,
     };
   },
 };
